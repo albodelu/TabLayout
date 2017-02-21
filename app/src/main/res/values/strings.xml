@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Tab Layout</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Server IP address -->
+    <string name="server_ip_address" translatable="false">http://apkacoupon.com/controllers/</string>
+    <!-- Location of the assets folder -->
+    <string name="server_image_assets" translatable="false">http://apkacoupon.com/Admin784audsw1245s</string>
+
+    <!-- Error shown when the server sends empty data -->
+    <string name="server_sent_empty_data">Server sent empty data</string>
+    <!-- Error message shown when the data types sent by the server doesn't match the types
+    set in the code.-->
+    <string name="conflict_data_server">Received conflicting data from the server</string>
+
+    <!-- Merchant names used to retrieve trending deals -->
+    <string name="hotels_merchant_name">Make My Trip</string>
+    <string name="food_drinks_merchant_name">Dominos</string>
+    <string name="fab_deals_merchant_name">Dominos</string>
+
+    <!-- Category names used to retrieve deals in the child fragments of Local Fragment -->
+    <string name="food_drinks_category"><![CDATA[Food & Drinks]]></string>
+    <string name="fab_deals_category">Fab Deals</string>
+    <string name="hotels_category">Hotels</string>
+    <string name="others_category">Others</string>
+
+    <!-- Trending now text shown in multiple local fragment -->
+    <string name="trending_now_text">Trending Now</string>
+
+    <string name="retry_button_text">Retry</string>
+    <!-- Error message shown when the internet connection is slow -->
+    <string name="internet_connection_slow">Internet connection is too slow. Try again!</string>
+
+    <!-- Primary text shown when there are no results under a category in the local fragment -->
+    <string name="sad_no_results_local">Sad, No Results!</string>
+    <!-- Secondary text shown when there are no results under a category in the local fragment -->
+    <string name="sad_no_results_desc_local">We cannot find deals under this section for your preferred location.</string>
+    <!-- Error shown when the app fails to connect to the network -->
+    <string name="cannot_connect_network">Cannot connect to internet</string>
+
+    <!-- Button text shown in Local Fragment Collapsing Toolbar and Hotels Child Fragment -->
+    <string name="select_location_local">Select Location</string>
+
+    <!-- Select Location Dialog title that appears when when the above button is clicked -->
+    <string name="pick_location_title">Select Preferred Location</string>
+
+    <!-- Second title - Fab Deals fragment, Hotel fragment, Food and
+     Drinks fragment -->
+    <string name="expiry_date_second_title">Expires on %s</string>
+
+    <!-- Line drawn on both sides of the section name that is present in the local fragment -->
+    <dimen name="line_around_section_name">1dp</dimen>
+</resources>

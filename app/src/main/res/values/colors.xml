@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- Snack bar background color -->
+    <color name="snack_color">#FF0000</color>
+
+    <!-- Color of the discounted price text view -->
+    <color name="discountedPrice">#FF0000</color>
+    <color name="dot_light_screen3">#AA000000</color>
+    <!-- Text Color of Text view inside the Child Fragment of the Local Offers -->
+    <color name="localChildFragmentTextColor1">#FF0000</color>
+
+    <!-- App bar color in shown Local Fragment-->
+    <color name="local_app_bar_color">#FFFFFF</color>
+    <!-- Collapsing toolbar background color -->
+    <color name="local_collapsing_toolbar">#FFFFFF</color>
+    <!-- Default Tab color -->
+    <color name="defaultTabColor">#A9A9A9</color>
+
+    <!-- Button color -->
+    <color name="defaultButtonColor">#FF33B5E5</color>
+
+    <!-- Grey 300 for the line separator -->
+    <color name="lineSeparatorColor">#BDBDBD</color>
+</resources>

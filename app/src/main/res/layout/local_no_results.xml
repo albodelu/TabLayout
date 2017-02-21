@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/local_no_results"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/recharge_view_pager_margin"
+    android:layout_marginEnd="@dimen/recharge_view_pager_margin"
+    android:layout_marginLeft="@dimen/recharge_view_pager_margin"
+    android:layout_marginRight="@dimen/recharge_view_pager_margin"
+    android:layout_marginStart="@dimen/recharge_view_pager_margin"
+    android:layout_marginTop="@dimen/recharge_view_pager_margin"
+    android:background="@drawable/border_inside_offers"
+    android:orientation="vertical"
+    android:padding="@dimen/local_child_fragment">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/no_results_search_image"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        fresco:backgroundImage="@drawable/no_results_icon" />
+
+    <TextView
+        android:id="@+id/no_results_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="@dimen/local_child_fragment_text"
+        android:text="@string/sad_no_results_local"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/no_results_sub_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/sad_no_results_desc_local"
+        android:textSize="14sp" />
+</LinearLayout>

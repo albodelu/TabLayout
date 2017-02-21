@@ -1,0 +1,39 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- Recharge view pager margin -->
+    <dimen name="recharge_view_pager_margin">16dp</dimen>
+    <!-- Padding around nested fragments displayed in the Local fragment -->
+    <dimen name="fragment_child_local">10dp</dimen>
+    <!-- Padding around the no results text view -->
+    <dimen name="local_child_fragment_text">8dp</dimen>
+    <!-- Padding around the no results child layout -->
+    <dimen name="local_child_fragment">16dp</dimen>
+
+    <!-- App bar height if it is holding a collapsing toolbar -->
+    <dimen name="app_bar_height">256dp</dimen>
+
+    <!-- Padding between tabs shown in the local fragment-->
+    <dimen name="local_tab_padding">16dp</dimen>
+
+    <!-- Size of the Select Location text shown in the Local Fragment -->
+    <dimen name="local_select_location_text_size">16sp</dimen>
+
+    <dimen name="viewpager_padding">8dp</dimen>
+
+    <!-- Width and height of the Image Slider (View pager) in the coupon_category_home top image slider layout -->
+    <dimen name="top_pager_slider_width">288dp</dimen>
+    <dimen name="top_pager_slider_height">160dp</dimen>
+
+    <!-- Margin between individual view pager screen in different fragments -->
+    <dimen name="view_pager_margin">16dp</dimen>
+
+    <!-- Padding around section name (eg: Local Fragment )-->
+    <dimen name="padding_around_section_name">4dp</dimen>
+
+    <!-- Margin around the product image -->
+    <dimen name="product_image_margin">8dp</dimen>
+</resources>

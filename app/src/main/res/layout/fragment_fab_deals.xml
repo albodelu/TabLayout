@@ -1,0 +1,111 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".FabDealsFragment">
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/content_fab_deals"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/recharge_view_pager_margin"
+            android:layout_marginEnd="@dimen/recharge_view_pager_margin"
+            android:layout_marginLeft="@dimen/recharge_view_pager_margin"
+            android:layout_marginRight="@dimen/recharge_view_pager_margin"
+            android:layout_marginStart="@dimen/recharge_view_pager_margin"
+            android:layout_marginTop="@dimen/recharge_view_pager_margin"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/local_trending"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/fragment_child_local"
+                android:background="@drawable/border_inside_offers"
+                android:padding="@dimen/fragment_child_local">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/dot_light_screen3"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/trending_now_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingTop="@dimen/local_child_fragment_text"
+                        android:text="@string/trending_now_text"
+                        android:textAllCaps="true"
+                        android:textColor="@color/localChildFragmentTextColor1"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/trending_deal_category_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingBottom="@dimen/local_child_fragment_text"
+                        android:textAllCaps="true"
+                        android:textColor="@color/localChildFragmentTextColor1"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/trending_deal_merchant_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/linearLayout"
+                    android:paddingTop="@dimen/local_child_fragment_text"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/trending_deal_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/trending_deal_merchant_name"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/trending_deal_expiry_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/trending_deal_title"
+                    android:paddingEnd="@dimen/local_child_fragment_text"
+                    android:paddingLeft="@dimen/local_child_fragment_text"
+                    android:paddingRight="@dimen/local_child_fragment_text"
+                    android:paddingStart="@dimen/local_child_fragment_text"
+                    android:textColor="@color/discountedPrice"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/othersRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none" />
+
+            <include layout="@layout/local_no_results" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <include
+        layout="@layout/progress_retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
