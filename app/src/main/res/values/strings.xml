@@ -3,9 +3,9 @@
     <string name="action_settings">Settings</string>
 
     <!-- Server IP address -->
-    <string name="server_ip_address" translatable="false"></string>
+    <string name="server_ip_address" translatable="false">ENTER SERVER IP ADDRESS</string>
     <!-- Location of the assets folder -->
-    <string name="server_image_assets" translatable="false"></string>
+    <string name="server_image_assets" translatable="false">ENTER SERVER ADDRESS WHERE IMAGES ARE STORED</string>
 
     <!-- Error shown when the server sends empty data -->
     <string name="server_sent_empty_data">Server sent empty data</string>
