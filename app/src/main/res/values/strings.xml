@@ -3,9 +3,9 @@
     <string name="action_settings">Settings</string>
 
     <!-- Server IP address -->
-    <string name="server_ip_address" translatable="false">http://apkacoupon.com/controllers/</string>
+    <string name="server_ip_address" translatable="false"></string>
     <!-- Location of the assets folder -->
-    <string name="server_image_assets" translatable="false">http://apkacoupon.com/Admin784audsw1245s</string>
+    <string name="server_image_assets" translatable="false"></string>
 
     <!-- Error shown when the server sends empty data -->
     <string name="server_sent_empty_data">Server sent empty data</string>

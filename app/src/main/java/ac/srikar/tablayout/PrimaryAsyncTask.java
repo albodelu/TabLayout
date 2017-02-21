@@ -142,7 +142,6 @@ public class PrimaryAsyncTask {
     public void cancelPrimaryAsyncTask() {
         Log.i(LOG_TAG, "Client: " + client);
         if (client != null) {
-            // TODO: The request are not getting cancelled and the data is getting downloaded from the server.
             client.cancelAllRequests(true);
         }
     }
