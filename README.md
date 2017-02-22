@@ -13,6 +13,6 @@ App launched -> MainActivity -> LocalFragment
 
 Local Fragment has a Button, Slider and a Tab layout.
 
-First Tab loads FabDealsFragment, second one loads FoodDrinksFragment, Third one loads HotelsFragment, Fourth one one loads OthersFragment.
+First Tab loads FabDealsFragment, second one loads FoodDrinksFragment, Third one loads HotelsFragment, Fourth one loads OthersFragment.
 
 The data inside these fragments is loaded using a helper class InitializeLocalFragment.
