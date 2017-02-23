@@ -25,7 +25,7 @@ public class OthersFragment extends Fragment {
     private ChangePRCVisibility prcVisibility;
 
     /**
-     * Variable has reference to the root view
+     * Initialize the root view
      */
     private View rootView;
 
