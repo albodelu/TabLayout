@@ -7,7 +7,7 @@ Any help is appreciated.
 ![Tab Layout Screenshot 2](https://raw.github.com/gSrikar/TabLayout/master/screeenshots/Screenshot_2017-02-21-20-26-16-577.jpeg)
 
 
-Here is the App flow
+**Here is the App flow**
 
 App launched -> MainActivity -> LocalFragment
 
@@ -18,3 +18,18 @@ First Tab loads FabDealsFragment, second one loads FoodDrinksFragment, Third one
 The data inside these fragments is loaded using a helper class InitializeLocalFragment.
 
 Finally, Sample JSON data is in the samplejson folder.
+
+**Weird behaviour I found while testing**
+
+Even with one tab I'm facing the same issue as long as I'm not loading `FoodDrinksFragment` (It is the fragment that is loaded usually in the second tab and is currently showing all the tabs as shown in the fig).
+
+When single tab or all tabs load `FoodDrinksFragment`, all 20 items are loaded as expected. Similarly, whatever is the position of the `FoodDrinksFragment`.
+
+All these Four Fragments have the same lines of code.
+
+I'm passing the `categoryName` as one of the argument to the helper class `InitializeLocalFragment`. If I pass Food Drinks as the category name via `FabDealsFragment` or `FoodDrinksFragment` all the items are loaded but if I pass the same category name via `HotelsFragment` or `OthersFragment` then the adapter's `onBindViewHolder` is only called once.
+
+
+https://github.com/gSrikar/TabLayout/blob/master/screeenshots/adapter_size.png
+
+
