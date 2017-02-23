@@ -29,7 +29,6 @@ All these Four Fragments have the same lines of code.
 
 I'm passing the `categoryName` as one of the argument to the helper class `InitializeLocalFragment`. If I pass Food Drinks as the category name via `FabDealsFragment` or `FoodDrinksFragment` all the items are loaded but if I pass the same category name via `HotelsFragment` or `OthersFragment` then the adapter's `onBindViewHolder` is only called once.
 
-
-https://github.com/gSrikar/TabLayout/blob/master/screeenshots/adapter_size.png
+The issue is not definitely with the adapter size. The below image shoes just that https://github.com/gSrikar/TabLayout/blob/master/screeenshots/adapter_size.png
 
 
