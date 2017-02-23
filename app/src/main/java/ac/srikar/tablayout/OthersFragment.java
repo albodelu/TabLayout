@@ -1,5 +1,6 @@
 package ac.srikar.tablayout;
 
+
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
@@ -16,17 +17,21 @@ public class OthersFragment extends Fragment {
 
     private static final String ARG_SECTION_NUMBER = "others-section-number";
 
-    /**
-     * Variable has reference to the root view
-     */
-    private View rootView;
-
     // UI elements
     private CoordinatorLayout coordinatorLayout;
     private NestedScrollView contentOthers;
 
     // Utility class
     private ChangePRCVisibility prcVisibility;
+
+    /**
+     * Variable has reference to the root view
+     */
+    private View rootView;
+
+    public OthersFragment() {
+        // Required empty public constructor
+    }
 
     /**
      * Returns a new instance of this fragment for the given section
@@ -61,4 +66,5 @@ public class OthersFragment extends Fragment {
         new InitializeLocalFragment(getContext(), rootView, coordinatorLayout, contentOthers,
                 getString(R.string.others_category), prcVisibility).initializeRV();
     }
+
 }

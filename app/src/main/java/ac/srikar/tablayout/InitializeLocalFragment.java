@@ -285,7 +285,7 @@ public class InitializeLocalFragment implements View.OnClickListener {
             if (localArrayLength != 0) {
                 // Populate the Local Deals list
                 // Specify an adapter
-                localDealsRVAdapter = new OthersAdapter(context, localDealsDataArray);
+                localDealsRVAdapter = new OthersAdapter(context, localDealsDataArray, categoryName);
                 localDealsRecyclerView.setAdapter(localDealsRVAdapter);
             } else {
                 // localArrayLength is 0; which means there are no rv elements to show.

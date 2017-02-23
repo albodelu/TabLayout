@@ -1,7 +1,6 @@
 package ac.srikar.tablayout;
 
 
-import android.app.Activity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -39,19 +38,6 @@ public class ChangePRCVisibility {
      * Variable that has reference to the main content
      */
     private View contentMain;
-
-    /**
-     * Default Constructor for activities.
-     *
-     * @param activity    holds the reference to the activity.
-     * @param contentMain Main Content of the layout.
-     */
-    public ChangePRCVisibility(Activity activity, View contentMain) {
-        progressBar = (ProgressBar) activity.findViewById(R.id.progressBar);
-        retryButton = (Button) activity.findViewById(R.id.retryButton);
-        retryTextView = (TextView) activity.findViewById(R.id.retry_text_view);
-        this.contentMain = contentMain;
-    }
 
     /**
      * Default Constructor for fragments.
@@ -100,25 +86,6 @@ public class ChangePRCVisibility {
 
     /**
      * If the connection to the network or the server failed then remove the progress bar and show
-     * the retry button.
-     */
-    public void failed() {
-        if (progressBar.getVisibility() == View.VISIBLE) {
-            progressBar.setVisibility(View.GONE);
-        }
-        if (retryButton.getVisibility() != View.VISIBLE) {
-            retryButton.setVisibility(View.VISIBLE);
-        }
-        if (retryTextView.getVisibility() != View.VISIBLE) {
-            retryTextView.setVisibility(View.VISIBLE);
-        }
-        if (contentMain.getVisibility() == View.VISIBLE) {
-            contentMain.setVisibility(View.GONE);
-        }
-    }
-
-    /**
-     * If the connection to the network or the server failed then remove the progress bar and show
      * the retry button. Also add the onClickListener to the Retry Button.
      */
     public void failed(final FragmentRetryClick fragmentRetryClick) {
@@ -136,18 +103,6 @@ public class ChangePRCVisibility {
         }
         if (retryTextView.getVisibility() != View.VISIBLE) {
             retryTextView.setVisibility(View.VISIBLE);
-        }
-        if (contentMain.getVisibility() == View.VISIBLE) {
-            contentMain.setVisibility(View.GONE);
-        }
-    }
-
-    /**
-     * Method shows progress bar and removes content
-     */
-    public void showProgress() {
-        if (progressBar.getVisibility() != View.VISIBLE) {
-            progressBar.setVisibility(View.VISIBLE);
         }
         if (contentMain.getVisibility() == View.VISIBLE) {
             contentMain.setVisibility(View.GONE);

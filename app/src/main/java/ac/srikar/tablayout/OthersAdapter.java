@@ -1,9 +1,7 @@
 package ac.srikar.tablayout;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -25,11 +23,13 @@ public class OthersAdapter extends RecyclerView.Adapter<OthersAdapter.OthersView
 
     private final Context context;
     private final ArrayList<LocalDealsDataFields> othersDataArray;
+    private final String categoryName;
     private LayoutInflater layoutInflater;
 
-    public OthersAdapter(Context context, ArrayList<LocalDealsDataFields> othersDataArray) {
+    public OthersAdapter(Context context, ArrayList<LocalDealsDataFields> othersDataArray, String from) {
         this.context = context;
         this.othersDataArray = othersDataArray;
+        this.categoryName = from;
         if (this.context != null) {
             layoutInflater = LayoutInflater.from(this.context);
         } else {
@@ -43,13 +43,16 @@ public class OthersAdapter extends RecyclerView.Adapter<OthersAdapter.OthersView
      * Method shows received data array in the log cat
      */
     private void getLogDetails() {
-        Log.i(LOG_TAG, "Others Data Array Size: " + othersDataArray.size());
+        Log.i(LOG_TAG, "Others Data Array Size of category " + categoryName + ": " + othersDataArray.size());
         for (int j = 0; j < othersDataArray.size(); j++) {
-            Log.i(LOG_TAG, "othersDataArray of item " + j + ", Other Deal Id: " +
+            Log.i(LOG_TAG, "othersDataArray of item " + j + " and category name " + categoryName +
+                    ", Other Deal Id: " +
                     othersDataArray.get(j).getLocalDealId());
-            Log.i(LOG_TAG, "othersDataArray of item " + j + ", Other Deal Second Title: " +
+            Log.i(LOG_TAG, "othersDataArray of item " + j + " and category name " + categoryName +
+                    ", Other Deal Second Title: " +
                     othersDataArray.get(j).getLocalDealSecondTitle());
-            Log.i(LOG_TAG, "othersDataArray of item " + j + ", Other Deal Image Link: " +
+            Log.i(LOG_TAG, "othersDataArray of item " + j + " and category name " + categoryName +
+                    ", Other Deal Image Link: " +
                     othersDataArray.get(j).getLocalDealImage());
         }
     }
@@ -79,13 +82,12 @@ public class OthersAdapter extends RecyclerView.Adapter<OthersAdapter.OthersView
 
     @Override
     public void onBindViewHolder(OthersViewHolder holder, int position) {
-        Log.i(LOG_TAG, "onBindViewHolder: Item count: " + getItemCount());
-        Log.i(LOG_TAG, "onBindViewHolder: position: " + position);
-        getLogDetails();
+        Log.i(LOG_TAG, "onBindViewHolder: Item count of category " + categoryName + ": " + getItemCount());
+        Log.i(LOG_TAG, "onBindViewHolder: position of category " + categoryName + ": " + position);
         String lfImage = othersDataArray.get(position).getLocalDealImage();
-        Log.i(LOG_TAG, "Local Deal Image: " + lfImage);
+        Log.i(LOG_TAG, "Local Deal Image of " + categoryName + ": " + lfImage);
         String lfCategoryName = othersDataArray.get(position).getLocalDealSecondTitle();
-        Log.i(LOG_TAG, "Local Deal Category Name: " + lfCategoryName);
+        Log.i(LOG_TAG, "Local Deal Category Name of category " + categoryName + ": " + lfCategoryName);
         if (lfCategoryName != null) {
             // Set the second title
             holder.othersSmallTitleTextView.setText(lfCategoryName);
@@ -97,7 +99,7 @@ public class OthersAdapter extends RecyclerView.Adapter<OthersAdapter.OthersView
                 // Load the Image
                 Picasso.with(context).load(lfUriImage).into(holder.othersImageView);
                 //holder.fabDealsImageView.setImageURI(lfUriImage);
-                Log.i(LOG_TAG, "Local Deal Image: " + lfUriImage);
+                Log.i(LOG_TAG, "Local Deal Image of category " + categoryName + ": " + lfUriImage);
             }
         }
     }
