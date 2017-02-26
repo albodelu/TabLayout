@@ -60,7 +60,6 @@ public class OthersFragment extends Fragment {
         contentOthers = (NestedScrollView) rootView.findViewById(R.id.others_fragment);
         // Initialize Utility class
         prcVisibility = new ChangePRCVisibility(rootView, contentOthers);
-//        initializeLocalOthers();
         return rootView;
     }
 
