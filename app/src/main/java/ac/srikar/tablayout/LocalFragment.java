@@ -178,6 +178,7 @@ public class LocalFragment extends Fragment {
 
         // Set up the ViewPager with the sections adapter.
         ViewPager mBottomViewPager = (ViewPager) rootView.findViewById(R.id.local_bottom_pager);
+        mBottomViewPager.setOffscreenPageLimit(mBottomSectionsPagerAdapter.getCount());
         mBottomViewPager.setAdapter(mBottomSectionsPagerAdapter);
 
         TabLayout tabLayout = (TabLayout) rootView.findViewById(R.id.tab_layout);
