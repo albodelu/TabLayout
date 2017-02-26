@@ -183,6 +183,42 @@ public class LocalFragment extends Fragment {
 
         TabLayout tabLayout = (TabLayout) rootView.findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(mBottomViewPager);
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
+            /**
+             * Called when a tab enters the selected state.
+             *
+             * @param tab The tab that was selected
+             */
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                // TODO: update the selected page here
+                Log.i(LOG_TAG, "page " + tab.getPosition() + " selected.");
+            }
+
+            /**
+             * Called when a tab exits the selected state.
+             *
+             * @param tab The tab that was unselected
+             */
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                // Do nothing
+                Log.i(LOG_TAG, "Page " + tab.getPosition() + " unselected and ");
+            }
+
+            /**
+             * Called when a tab that is already selected is chosen again by the user. Some applications
+             * may use this action to return to the top level of a category.
+             *
+             * @param tab The tab that was reselected.
+             */
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                // Do nothing
+                Log.i(LOG_TAG, "Page " + tab.getPosition() + " reselected.");
+            }
+        });
     }
 
     /**
