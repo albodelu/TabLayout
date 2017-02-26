@@ -122,7 +122,7 @@ public class InitializeLocalFragment implements View.OnClickListener {
         // No need to calculate the array length (@code localTrendingJSONArray.length())
         int localTrendingArrayLength = localTrendingJSONArray.length() < 1 ? localTrendingJSONArray.length() : 1;
         if (localTrendingArrayLength == 0) {
-            rootView.findViewById(R.id.local_trending).setVisibility(View.GONE);
+            rootView.findViewById(R.id.local_trending).setVisibility(View.INVISIBLE);
             return;
         }
         // Temporary variables
