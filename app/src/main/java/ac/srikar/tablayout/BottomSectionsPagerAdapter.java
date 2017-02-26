@@ -3,11 +3,33 @@ package ac.srikar.tablayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.view.ViewGroup;
 
-/**
- * {@link FragmentStatePagerAdapter}
- */
-public class BottomSectionsPagerAdapter extends FragmentStatePagerAdapter {
+
+import java.util.ArrayList;
+import java.util.List;
+
+class BottomSectionsPagerAdapter extends FragmentStatePagerAdapter {
+
+    private static final int NUM_PAGES = 4;
+
+    private final List<String> sPageTitles = new ArrayList<String>() {
+        {
+            add("FAB DEALS");
+            add("FOOD & DRINKS");
+            add("HOTELS");
+            add("OTHERS");
+        }
+    };
+
+    private final List<Fragment> mPageFragments = new ArrayList<Fragment>() {
+        {
+            add(FabDealsFragment.newInstance());
+            add(FoodDrinksFragment.newInstance());
+            add(HotelsFragment.newInstance());
+            add(OthersFragment.newInstance());
+        }
+    };
 
     BottomSectionsPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -15,40 +37,23 @@ public class BottomSectionsPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        // getItem is called to instantiate the fragment for the given page.
-        // Return a EditProfilePlaceholderFragment (defined as a static inner class below).
-        switch (position) {
-            case 0:
-                return FabDealsFragment.newInstance(position + 1);
-            case 1:
-                return FoodDrinksFragment.newInstance(position + 1);
-            case 2:
-                return HotelsFragment.newInstance(position + 1);
-            case 3:
-                return OthersFragment.newInstance(position + 1);
-            default:
-                return FabDealsFragment.newInstance(position + 1);
-        }
+        return mPageFragments.get(position);
+    }
+
+    @Override
+    public Object instantiateItem(ViewGroup container, int position) {
+        Fragment createdFragment = (Fragment) super.instantiateItem(container, position);
+        mPageFragments.set(position, createdFragment);
+        return createdFragment;
     }
 
     @Override
     public int getCount() {
-        // Show 4 total pages.
-        return 4;
+        return NUM_PAGES;
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-        switch (position) {
-            case 0:
-                return "FAB DEALS";
-            case 1:
-                return "FOOD & DRINKS";
-            case 2:
-                return "HOTELS";
-            case 3:
-                return "OTHERS";
-        }
-        return null;
+        return sPageTitles.get(position);
     }
 }

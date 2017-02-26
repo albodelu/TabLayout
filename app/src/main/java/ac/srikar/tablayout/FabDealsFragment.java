@@ -15,7 +15,9 @@ import android.view.ViewGroup;
  */
 public class FabDealsFragment extends Fragment {
 
-    private static final String ARG_SECTION_NUMBER = "fab-deals-section-number";
+    private static final String FAB_DEALS_SECTION_ID = "fab-deals-section-number";
+    private static final int FAB_DEALS_SECTION_VALUE = 0;
+
 
     // UI elements
     private CoordinatorLayout coordinatorLayout;
@@ -37,10 +39,10 @@ public class FabDealsFragment extends Fragment {
      * Returns a new instance of this fragment for the given section
      * number.
      */
-    public static FabDealsFragment newInstance(int sectionNumber) {
+    public static FabDealsFragment newInstance() {
         FabDealsFragment fragment = new FabDealsFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+        args.putInt(FAB_DEALS_SECTION_ID, FAB_DEALS_SECTION_VALUE);
         fragment.setArguments(args);
         return fragment;
     }

@@ -15,7 +15,10 @@ import android.view.ViewGroup;
  */
 public class HotelsFragment extends Fragment {
 
-    private static final String ARG_SECTION_NUMBER = "hotels-section-number";
+    private static final String HOTELS_SECTION_ID = "hotels-section-number";
+    private static final int HOTELS_SECTION_VALUE = 2;
+
+
 
     // UI elements
     private CoordinatorLayout coordinatorLayout;
@@ -37,10 +40,10 @@ public class HotelsFragment extends Fragment {
      * Returns a new instance of this fragment for the given section
      * number.
      */
-    public static HotelsFragment newInstance(int sectionNumber) {
+    public static HotelsFragment newInstance() {
         HotelsFragment fragment = new HotelsFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+        args.putInt(HOTELS_SECTION_ID, HOTELS_SECTION_VALUE);
         fragment.setArguments(args);
         return fragment;
     }

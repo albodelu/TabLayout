@@ -15,7 +15,9 @@ import android.view.ViewGroup;
  */
 public class FoodDrinksFragment extends Fragment {
 
-    private static final String ARG_SECTION_NUMBER = "food-drinks-section-number";
+    private static final String FOOD_DRINKS_SECTION_ID = "food-drinks-section-number";
+    private static final int FOOD_DRINKS_SECTION_VALUE = 1;
+
 
     // UI elements
     private CoordinatorLayout coordinatorLayout;
@@ -37,10 +39,10 @@ public class FoodDrinksFragment extends Fragment {
      * Returns a new instance of this fragment for the given section
      * number.
      */
-    public static FoodDrinksFragment newInstance(int sectionNumber) {
+    public static FoodDrinksFragment newInstance() {
         FoodDrinksFragment fragment = new FoodDrinksFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+        args.putInt(FOOD_DRINKS_SECTION_ID, FOOD_DRINKS_SECTION_VALUE);
         fragment.setArguments(args);
         return fragment;
     }

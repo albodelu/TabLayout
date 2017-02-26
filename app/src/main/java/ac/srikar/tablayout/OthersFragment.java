@@ -15,7 +15,8 @@ import android.view.ViewGroup;
  */
 public class OthersFragment extends Fragment {
 
-    private static final String ARG_SECTION_NUMBER = "others-section-number";
+    private static final String OTHERS_SECTION_ID = "others-section-number";
+    private static final int OTHERS_SECTION_VALUE = 3;
 
     // UI elements
     private CoordinatorLayout coordinatorLayout;
@@ -37,10 +38,10 @@ public class OthersFragment extends Fragment {
      * Returns a new instance of this fragment for the given section
      * number.
      */
-    public static OthersFragment newInstance(int sectionNumber) {
+    public static OthersFragment newInstance() {
         OthersFragment fragment = new OthersFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+        args.putInt(OTHERS_SECTION_ID, OTHERS_SECTION_VALUE);
         fragment.setArguments(args);
         return fragment;
     }
