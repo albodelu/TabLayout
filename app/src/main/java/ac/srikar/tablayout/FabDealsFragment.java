@@ -17,11 +17,7 @@ import android.view.ViewGroup;
  */
 public class FabDealsFragment extends Fragment {
 
-    private static final String FAB_DEALS_SECTION_ID = "fab-deals-section-number";
-    private static final int FAB_DEALS_SECTION_VALUE = 0;
-
-    private int id;
-
+    private static final String ARG_SECTION_NUMBER = "fab-deals-section-number";
 
     // UI elements
     private CoordinatorLayout coordinatorLayout;
@@ -41,20 +37,14 @@ public class FabDealsFragment extends Fragment {
         // Required empty public constructor
     }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        id = getArguments().getInt(FAB_DEALS_SECTION_ID);
-    }
-
     /**
      * Returns a new instance of this fragment for the given section
      * number.
      */
-    public static FabDealsFragment newInstance() {
+    public static FabDealsFragment newInstance(int sectionNumber) {
         FabDealsFragment fragment = new FabDealsFragment();
         Bundle args = new Bundle();
-        args.putInt(FAB_DEALS_SECTION_ID, FAB_DEALS_SECTION_VALUE);
+        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
         return fragment;
     }

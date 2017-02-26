@@ -24,10 +24,10 @@ class BottomSectionsPagerAdapter extends FragmentStatePagerAdapter {
 
     private final List<Fragment> mPageFragments = new ArrayList<Fragment>() {
         {
-            add(FabDealsFragment.newInstance());
-            add(FoodDrinksFragment.newInstance());
-            add(HotelsFragment.newInstance());
-            add(OthersFragment.newInstance());
+            add(FabDealsFragment.newInstance(0));
+            add(FoodDrinksFragment.newInstance(1));
+            add(HotelsFragment.newInstance(2));
+            add(OthersFragment.newInstance(3));
         }
     };
 
