@@ -80,12 +80,6 @@ public class OthersFragment extends Fragment {
     private void initializeLocalOthers() {
         initializeOthers = new InitializeLocalFragment(getContext(), rootView, coordinatorLayout, contentOthers,
                 getString(R.string.others_category), prcVisibility);
-        // Initialize Trending deals
-        try {
-            initializeOthers.initializeTrending(getString(R.string.fab_deals_merchant_name));
-        } catch (Exception e) {
-            Log.e(LOG_TAG, e.getMessage());
-        }
         // Initialize Recycler view and populates data into it
         initializeOthers.initializeRV();
     }

@@ -13,7 +13,7 @@ class BottomSectionsPagerAdapter extends FragmentStatePagerAdapter {
 
     private static final int NUM_PAGES = 4;
 
-    private final List<String> sPageTitles = new ArrayList<String>() {
+    private final List<String> mPageTitles = new ArrayList<String>() {
         {
             add("FAB DEALS");
             add("FOOD & DRINKS");
@@ -54,6 +54,6 @@ class BottomSectionsPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return sPageTitles.get(position);
+        return mPageTitles.get(position);
     }
 }
