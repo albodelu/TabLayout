@@ -13,7 +13,7 @@
         <RelativeLayout
             android:id="@+id/content_fab_deals_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/recharge_view_pager_margin"
             android:layout_marginEnd="@dimen/recharge_view_pager_margin"
             android:layout_marginLeft="@dimen/recharge_view_pager_margin"
@@ -96,7 +96,7 @@
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/othersRecyclerView"
-                android:layout_below="@+id/local_trending"
+                android:layout_below="@id/local_trending"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scrollbars="none" />
