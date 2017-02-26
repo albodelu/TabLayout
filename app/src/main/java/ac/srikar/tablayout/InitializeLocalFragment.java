@@ -91,20 +91,22 @@ public class InitializeLocalFragment implements View.OnClickListener {
     public void initializeTrending(final String merchantName) {
         // Set listener to the trending layout
         RelativeLayout localTrendingLayout = (RelativeLayout) rootView.findViewById(R.id.local_trending);
-        localTrendingLayout.setOnClickListener(this);
-        new PrimaryAsyncTask(context, coordinatorLayout, rootView, contentMain,
-                new PrimaryAsyncTask.AsyncResponseForFragment() {
-                    @Override
-                    public void primaryAsyncSuccess(String stringResponse) throws JSONException {
-                        parseLocalTrending(stringResponse);
-                    }
+        if (localTrendingLayout != null) {
+            localTrendingLayout.setOnClickListener(this);
+            new PrimaryAsyncTask(context, coordinatorLayout, rootView, contentMain,
+                    new PrimaryAsyncTask.AsyncResponseForFragment() {
+                        @Override
+                        public void primaryAsyncSuccess(String stringResponse) throws JSONException {
+                            parseLocalTrending(stringResponse);
+                        }
 
-                    @Override
-                    public void primaryAsyncFailed() {
-                        initializeTrending(merchantName);
-                    }
-                }).executeFragment("deals.php?deal_list_city=" + cityName +
-                "&deal_list_category=" + categoryName + "&deal_list_merchant=" + merchantName);
+                        @Override
+                        public void primaryAsyncFailed() {
+                            initializeTrending(merchantName);
+                        }
+                    }).executeFragment("deals.php?deal_list_city=" + cityName +
+                    "&deal_list_category=" + categoryName + "&deal_list_merchant=" + merchantName);
+        }
     }
 
     /**
