@@ -121,8 +121,9 @@ public class InitializeLocalFragment implements View.OnClickListener {
         // Show the first deal with merchant name
         // No need to calculate the array length (@code localTrendingJSONArray.length())
         int localTrendingArrayLength = localTrendingJSONArray.length() < 1 ? localTrendingJSONArray.length() : 1;
-        if (localTrendingArrayLength == 0) {
-            rootView.findViewById(R.id.local_trending).setVisibility(View.INVISIBLE);
+        if (localTrendingArrayLength != 0) {
+            rootView.findViewById(R.id.local_trending).setVisibility(View.VISIBLE);
+        } else {
             return;
         }
         // Temporary variables

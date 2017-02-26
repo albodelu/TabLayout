@@ -10,22 +10,23 @@
         android:layout_height="match_parent"
         android:visibility="gone">
 
-        <LinearLayout
+        <RelativeLayout
+            android:id="@+id/content_fab_deals_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginBottom="@dimen/recharge_view_pager_margin"
             android:layout_marginEnd="@dimen/recharge_view_pager_margin"
             android:layout_marginLeft="@dimen/recharge_view_pager_margin"
             android:layout_marginRight="@dimen/recharge_view_pager_margin"
             android:layout_marginStart="@dimen/recharge_view_pager_margin"
-            android:layout_marginTop="@dimen/recharge_view_pager_margin"
-            android:orientation="vertical">
+            android:layout_marginTop="@dimen/recharge_view_pager_margin">
 
             <RelativeLayout
                 android:id="@+id/local_trending"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/fragment_child_local"
+                android:visibility="gone"
                 android:background="@drawable/border_inside_offers"
                 android:padding="@dimen/fragment_child_local">
 
@@ -95,12 +96,13 @@
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/othersRecyclerView"
+                android:layout_below="@+id/local_trending"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scrollbars="none" />
 
             <include layout="@layout/local_no_results" />
-        </LinearLayout>
+        </RelativeLayout>
     </android.support.v4.widget.NestedScrollView>
 
     <include
