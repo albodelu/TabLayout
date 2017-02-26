@@ -17,6 +17,11 @@ import android.view.ViewGroup;
  */
 public class HotelsFragment extends Fragment {
 
+    /**
+     * Log cat tag
+     */
+    private static final String LOG_TAG = HotelsFragment.class.getSimpleName();
+
     private static final String ARG_SECTION_NUMBER = "hotels-section-number";
 
     // UI elements
@@ -78,8 +83,8 @@ public class HotelsFragment extends Fragment {
         try {
             initializeHotels.initializeTrending(getString(R.string.hotels_merchant_name));
         } catch (Exception e) {
-            Log.e("HotelsFragment", "exception initializing trending");
-    }
+            Log.e(LOG_TAG, e.getMessage());
+        }
         // Initialize Recycler view and populates data into it
         initializeHotels.initializeRV();
     }

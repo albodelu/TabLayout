@@ -17,6 +17,11 @@ import android.view.ViewGroup;
  */
 public class OthersFragment extends Fragment {
 
+    /**
+     * Log cat tag
+     */
+    private static final String LOG_TAG = FoodDrinksFragment.class.getSimpleName();
+
     private static final String ARG_SECTION_NUMBER = "others-section-number";
 
     // UI elements
@@ -79,7 +84,7 @@ public class OthersFragment extends Fragment {
         try {
             initializeOthers.initializeTrending(getString(R.string.fab_deals_merchant_name));
         } catch (Exception e) {
-            Log.e("FabDealsFragment", "exception initializing trending");
+            Log.e(LOG_TAG, e.getMessage());
         }
         // Initialize Recycler view and populates data into it
         initializeOthers.initializeRV();
