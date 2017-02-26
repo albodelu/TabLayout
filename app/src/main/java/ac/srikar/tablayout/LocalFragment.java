@@ -217,7 +217,7 @@ public class LocalFragment extends Fragment {
         } else {
             // Initialise the View pager inside container class
             ViewPagerInsideContainer viewPagerInsideContainer = new ViewPagerInsideContainer(
-                    getContext(), rootView);
+                    getActivity(), rootView);
             // parse json data
             viewPagerInsideContainer.parseJSON(imagesUrlJSONArray);
             // Show the sliders

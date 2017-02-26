@@ -2,9 +2,11 @@ package ac.srikar.tablayout;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.NestedScrollView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +19,8 @@ public class FabDealsFragment extends Fragment {
 
     private static final String FAB_DEALS_SECTION_ID = "fab-deals-section-number";
     private static final int FAB_DEALS_SECTION_VALUE = 0;
+
+    private int id;
 
 
     // UI elements
@@ -31,8 +35,16 @@ public class FabDealsFragment extends Fragment {
      */
     private View rootView;
 
+    InitializeLocalFragment initializeFabDeals;
+
     public FabDealsFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        id = getArguments().getInt(FAB_DEALS_SECTION_ID);
     }
 
     /**
@@ -57,18 +69,34 @@ public class FabDealsFragment extends Fragment {
         contentFabDeals = (NestedScrollView) rootView.findViewById(R.id.content_fab_deals);
         // Initialize Utility class
         prcVisibility = new ChangePRCVisibility(rootView, contentFabDeals);
-        initializeFabDealsRV();
+//        initializeFabDealsRV();
         return rootView;
     }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        initializeFabDealsRV();
+    }
+
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        initializeFabDeals.notifyDatasetChanged();
+//    }
 
     /**
      * Method initializes fab deals fragment
      */
     private void initializeFabDealsRV() {
-        InitializeLocalFragment initializeFabDeals = new InitializeLocalFragment(getContext(), rootView,
+        initializeFabDeals = new InitializeLocalFragment(getContext(), rootView,
                 coordinatorLayout, contentFabDeals, getString(R.string.fab_deals_category), prcVisibility);
         // Initialize Trending deals
-        initializeFabDeals.initializeTrending(getString(R.string.fab_deals_merchant_name));
+        try {
+//            initializeFabDeals.initializeTrending(getString(R.string.fab_deals_merchant_name));
+        } catch (Exception e) {
+            Log.e("FabDealsFragment", "exception initializing trending");
+        }
         // Initialize Recycler view and populates data into it
         initializeFabDeals.initializeRV();
     }

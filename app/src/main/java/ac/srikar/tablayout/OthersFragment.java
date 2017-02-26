@@ -2,9 +2,11 @@ package ac.srikar.tablayout;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.NestedScrollView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +31,9 @@ public class OthersFragment extends Fragment {
      * Initialize the root view
      */
     private View rootView;
+
+    InitializeLocalFragment initializeOthers;
+
 
     public OthersFragment() {
         // Required empty public constructor
@@ -56,16 +61,36 @@ public class OthersFragment extends Fragment {
         contentOthers = (NestedScrollView) rootView.findViewById(R.id.others_fragment);
         // Initialize Utility class
         prcVisibility = new ChangePRCVisibility(rootView, contentOthers);
-        initializeLocalOthers();
+//        initializeLocalOthers();
         return rootView;
     }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        initializeLocalOthers();
+    }
+//
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        initializeOthers.notifyDatasetChanged();
+//    }
 
     /**
      * Method initialises Others Fragment view
      */
     private void initializeLocalOthers() {
-        new InitializeLocalFragment(getContext(), rootView, coordinatorLayout, contentOthers,
-                getString(R.string.others_category), prcVisibility).initializeRV();
+        initializeOthers = new InitializeLocalFragment(getContext(), rootView, coordinatorLayout, contentOthers,
+                getString(R.string.others_category), prcVisibility);
+        // Initialize Trending deals
+        try {
+//            initializeOthers.initializeTrending(getString(R.string.fab_deals_merchant_name));
+        } catch (Exception e) {
+            Log.e("FabDealsFragment", "exception initializing trending");
+    }
+        // Initialize Recycler view and populates data into it
+        initializeOthers.initializeRV();
     }
 
 }

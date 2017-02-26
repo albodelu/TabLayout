@@ -2,9 +2,11 @@ package ac.srikar.tablayout;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.NestedScrollView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +32,8 @@ public class FoodDrinksFragment extends Fragment {
      * Initialize the root view
      */
     private View rootView;
+
+    InitializeLocalFragment initializeFoodDrinks;
 
     public FoodDrinksFragment() {
         // Required empty public constructor
@@ -57,18 +61,34 @@ public class FoodDrinksFragment extends Fragment {
         contentFabDeals = (NestedScrollView) rootView.findViewById(R.id.content_fab_deals);
         // Initialize Utility class
         prcVisibility = new ChangePRCVisibility(rootView, contentFabDeals);
-        initializeFoodDrinksView();
+//        initializeFoodDrinksView();
         return rootView;
     }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        initializeFoodDrinksView();
+    }
+//
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        initializeFoodDrinks.notifyDatasetChanged();
+//    }
 
     /**
      * Method initializes Food and Drinks fragment
      */
     private void initializeFoodDrinksView() {
-        InitializeLocalFragment initializeFoodDrinks = new InitializeLocalFragment(getContext(), rootView,
+        initializeFoodDrinks = new InitializeLocalFragment(getContext(), rootView,
                 coordinatorLayout, contentFabDeals, "Food Drinks", prcVisibility);
         // Initialize Trending deals
-        initializeFoodDrinks.initializeTrending(getString(R.string.food_drinks_merchant_name));
+        try {
+//            initializeFoodDrinks.initializeTrending(getString(R.string.food_drinks_merchant_name));
+        } catch (Exception e) {
+            Log.e("FoodDrinksFragment", "exception initializing trending");
+        }
         // Initialize Recycler view and populates data into it
         initializeFoodDrinks.initializeRV();
     }

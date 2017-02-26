@@ -2,9 +2,11 @@ package ac.srikar.tablayout;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.NestedScrollView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +34,8 @@ public class HotelsFragment extends Fragment {
      */
     private View rootView;
 
+    InitializeLocalFragment initializeHotels;
+
     public HotelsFragment() {
         // Required empty public constructor
     }
@@ -58,18 +62,34 @@ public class HotelsFragment extends Fragment {
         contentFabDeals = (NestedScrollView) rootView.findViewById(R.id.content_fab_deals);
         // Initialize Utility class
         prcVisibility = new ChangePRCVisibility(rootView, contentFabDeals);
-        initializeHotelsView();
+//        initializeHotelsView();
         return rootView;
     }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        initializeHotelsView();
+    }
+
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        initializeHotels.notifyDatasetChanged();
+//    }
 
     /**
      * Method initializes Hotels fragment
      */
     private void initializeHotelsView() {
-        InitializeLocalFragment initializeHotels = new InitializeLocalFragment(getContext(), rootView,
+        initializeHotels = new InitializeLocalFragment(getContext(), rootView,
                 coordinatorLayout, contentFabDeals, getString(R.string.hotels_category), prcVisibility);
         // Initialize Trending deals
-        initializeHotels.initializeTrending(getString(R.string.hotels_merchant_name));
+        try {
+//            initializeHotels.initializeTrending(getString(R.string.hotels_merchant_name));
+        } catch (Exception e) {
+            Log.e("HotelsFragment", "exception initializing trending");
+    }
         // Initialize Recycler view and populates data into it
         initializeHotels.initializeRV();
     }
