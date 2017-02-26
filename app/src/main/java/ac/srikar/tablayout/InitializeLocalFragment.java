@@ -101,7 +101,7 @@ public class InitializeLocalFragment implements View.OnClickListener {
 
                     @Override
                     public void primaryAsyncFailed() {
-//                        initializeTrending(merchantName);
+                        initializeTrending(merchantName);
                     }
                 }).executeFragment("deals.php?deal_list_city=" + cityName +
                 "&deal_list_category=" + categoryName + "&deal_list_merchant=" + merchantName);
@@ -209,7 +209,7 @@ public class InitializeLocalFragment implements View.OnClickListener {
 
                     @Override
                     public void primaryAsyncFailed() {
-//                        retrieveOthersDataArray();
+                        retrieveOthersDataArray();
                     }
                 }).executeFragment("deals.php?deal_list_city_mobile=" + cityName +
                 "&deal_list_category=" + categoryName + "&limit_result=20&after=" + localDealsCount);
@@ -297,7 +297,7 @@ public class InitializeLocalFragment implements View.OnClickListener {
             }
         } else {
             // Notify the adapter that data set has changed
-            notifyDatasetChanged();
+            localDealsRVAdapter.notifyDataSetChanged();
         }
         // Increase the count since parsing the first set of results are returned
         localDealsCount = localDealsCount + 20;
@@ -325,11 +325,5 @@ public class InitializeLocalFragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         // Open Local Deals
-    }
-
-    public void notifyDatasetChanged() {
-        if (localDealsRVAdapter != null) {
-            localDealsRVAdapter.notifyDataSetChanged();
-        }
     }
 }

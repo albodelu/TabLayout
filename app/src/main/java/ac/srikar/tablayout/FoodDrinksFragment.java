@@ -70,12 +70,6 @@ public class FoodDrinksFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         initializeFoodDrinksView();
     }
-//
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//        initializeFoodDrinks.notifyDatasetChanged();
-//    }
 
     /**
      * Method initializes Food and Drinks fragment

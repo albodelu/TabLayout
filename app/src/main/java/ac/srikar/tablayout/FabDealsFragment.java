@@ -69,7 +69,7 @@ public class FabDealsFragment extends Fragment {
         contentFabDeals = (NestedScrollView) rootView.findViewById(R.id.content_fab_deals);
         // Initialize Utility class
         prcVisibility = new ChangePRCVisibility(rootView, contentFabDeals);
-//        initializeFabDealsRV();
+        initializeFabDealsRV();
         return rootView;
     }
 
@@ -78,12 +78,6 @@ public class FabDealsFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         initializeFabDealsRV();
     }
-
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//        initializeFabDeals.notifyDatasetChanged();
-//    }
 
     /**
      * Method initializes fab deals fragment

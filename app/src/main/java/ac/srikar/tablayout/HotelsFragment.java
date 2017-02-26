@@ -72,12 +72,6 @@ public class HotelsFragment extends Fragment {
         initializeHotelsView();
     }
 
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//        initializeHotels.notifyDatasetChanged();
-//    }
-
     /**
      * Method initializes Hotels fragment
      */

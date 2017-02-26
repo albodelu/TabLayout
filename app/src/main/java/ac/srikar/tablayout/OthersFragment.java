@@ -70,12 +70,6 @@ public class OthersFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         initializeLocalOthers();
     }
-//
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//        initializeOthers.notifyDatasetChanged();
-//    }
 
     /**
      * Method initialises Others Fragment view
@@ -88,7 +82,7 @@ public class OthersFragment extends Fragment {
             initializeOthers.initializeTrending(getString(R.string.fab_deals_merchant_name));
         } catch (Exception e) {
             Log.e("FabDealsFragment", "exception initializing trending");
-    }
+        }
         // Initialize Recycler view and populates data into it
         initializeOthers.initializeRV();
     }
