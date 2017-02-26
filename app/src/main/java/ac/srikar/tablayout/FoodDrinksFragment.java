@@ -85,7 +85,7 @@ public class FoodDrinksFragment extends Fragment {
                 coordinatorLayout, contentFabDeals, "Food Drinks", prcVisibility);
         // Initialize Trending deals
         try {
-//            initializeFoodDrinks.initializeTrending(getString(R.string.food_drinks_merchant_name));
+            initializeFoodDrinks.initializeTrending(getString(R.string.food_drinks_merchant_name));
         } catch (Exception e) {
             Log.e("FoodDrinksFragment", "exception initializing trending");
         }

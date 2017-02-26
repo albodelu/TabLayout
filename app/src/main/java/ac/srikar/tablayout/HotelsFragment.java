@@ -86,7 +86,7 @@ public class HotelsFragment extends Fragment {
                 coordinatorLayout, contentFabDeals, getString(R.string.hotels_category), prcVisibility);
         // Initialize Trending deals
         try {
-//            initializeHotels.initializeTrending(getString(R.string.hotels_merchant_name));
+            initializeHotels.initializeTrending(getString(R.string.hotels_merchant_name));
         } catch (Exception e) {
             Log.e("HotelsFragment", "exception initializing trending");
     }

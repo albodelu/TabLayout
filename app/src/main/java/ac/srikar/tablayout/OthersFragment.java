@@ -85,7 +85,7 @@ public class OthersFragment extends Fragment {
                 getString(R.string.others_category), prcVisibility);
         // Initialize Trending deals
         try {
-//            initializeOthers.initializeTrending(getString(R.string.fab_deals_merchant_name));
+            initializeOthers.initializeTrending(getString(R.string.fab_deals_merchant_name));
         } catch (Exception e) {
             Log.e("FabDealsFragment", "exception initializing trending");
     }

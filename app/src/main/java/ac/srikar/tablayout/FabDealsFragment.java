@@ -93,7 +93,7 @@ public class FabDealsFragment extends Fragment {
                 coordinatorLayout, contentFabDeals, getString(R.string.fab_deals_category), prcVisibility);
         // Initialize Trending deals
         try {
-//            initializeFabDeals.initializeTrending(getString(R.string.fab_deals_merchant_name));
+            initializeFabDeals.initializeTrending(getString(R.string.fab_deals_merchant_name));
         } catch (Exception e) {
             Log.e("FabDealsFragment", "exception initializing trending");
         }
